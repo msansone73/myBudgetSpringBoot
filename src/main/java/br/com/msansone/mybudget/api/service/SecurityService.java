@@ -60,4 +60,17 @@ public class SecurityService {
         }
     }
 
+    public Usuario inserir(Usuario usuario){
+
+        return this.save(usuario);
+    }
+
+
+    public Usuario atualizar(Usuario usuario) {
+        return this.save(usuario);
+    }
+
+    private Usuario save(Usuario usuario){
+        return userRepository.save(usuario);
+    }
 }
