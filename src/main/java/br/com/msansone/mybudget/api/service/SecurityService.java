@@ -1,6 +1,7 @@
 package br.com.msansone.mybudget.api.service;
 
 
+import br.com.msansone.mybudget.api.exception.LoginException;
 import br.com.msansone.mybudget.api.model.Role;
 import br.com.msansone.mybudget.api.model.Usuario;
 import br.com.msansone.mybudget.api.repository.RoleRepository;
@@ -44,4 +45,19 @@ public class SecurityService {
         userRepository.save(new Usuario("usuario7", "msansone@gmail.com", "123",roleUser));
 
     }
+
+    public List<Usuario> findAllUsuarios() {
+        return userRepository.findAll();
+    }
+
+    public Usuario login(String email, String password){
+        Usuario user = userRepository.findByEmail(email);
+
+        if (user!=null && user.getPassword().equals(password)){
+            return user;
+        }else{
+            throw new LoginException();
+        }
+    }
+
 }

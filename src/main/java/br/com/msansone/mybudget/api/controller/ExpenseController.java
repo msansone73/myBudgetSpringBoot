@@ -22,7 +22,7 @@ public class ExpenseController {
     SecurityService securityService;
 
 
-    @PostMapping(path = "/expense", consumes = "application/json" , produces = "application/json")
+    @PostMapping( path = "/expense", consumes = "application/json" , produces = "application/json")
     public Expense addExpense(@RequestBody Expense expense){
 
         return expenseService.AdicionarDespesa(expense);
@@ -37,6 +37,9 @@ public class ExpenseController {
     public List<Expense> buscarTudo(){
         return expenseService.listarTudo();
     }
+
+
+
 
     @GetMapping("/carga/")
     public String carga(){
