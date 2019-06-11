@@ -4,6 +4,7 @@ br/com/msansone/mybudget/api/controller/ExpenseController.class
 br/com/msansone/mybudget/api/model/StatusRole.class
 br/com/msansone/mybudget/api/repository/ExpenseRepository.class
 br/com/msansone/mybudget/api/model/SubCategory.class
+br/com/msansone/mybudget/api/controller/SecurityController.class
 br/com/msansone/mybudget/api/model/CategoryType.class
 br/com/msansone/mybudget/api/service/CategoryService.class
 br/com/msansone/mybudget/api/model/Category.class
@@ -13,6 +14,7 @@ br/com/msansone/mybudget/api/repository/SubCategoryRepository.class
 br/com/msansone/mybudget/api/model/Usuario.class
 br/com/msansone/mybudget/api/ApiApplication.class
 br/com/msansone/mybudget/api/model/Expense.class
+br/com/msansone/mybudget/api/exception/LoginException.class
 br/com/msansone/mybudget/api/service/SecurityService.class
 br/com/msansone/mybudget/api/Initializer.class
 br/com/msansone/mybudget/api/service/SecurityRTService.class

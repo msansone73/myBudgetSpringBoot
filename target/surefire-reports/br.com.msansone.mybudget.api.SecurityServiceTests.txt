@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.msansone.mybudget.api.SecurityServiceTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.751 s - in br.com.msansone.mybudget.api.SecurityServiceTests

@@ -2,11 +2,13 @@
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/model/Category.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/Initializer.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/model/StatusRole.java
+/Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/exception/LoginException.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/service/SecurityRTService.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/repository/CategoryRepository.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/service/CategoryService.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/model/Role.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/ApiApplication.java
+/Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/controller/SecurityController.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/model/Usuario.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/service/ExpenseService.java
 /Users/msansone/Documents/git/myBudgetSpringBoot/src/main/java/br/com/msansone/mybudget/api/controller/ExpenseController.java

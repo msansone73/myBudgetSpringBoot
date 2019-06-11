@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
@@ -27,11 +28,46 @@ public class SecurityService {
     @Autowired
     SecurityRTService securityRTService;
 
+
+    public List<Usuario> findAllUsuarios() {
+
+        return userRepository.findAll();
+    }
+
+    public Usuario inserir(Usuario usuario){
+        return this.save(usuario);
+    }
+
+    public Usuario atualizar(Usuario usuario) {
+
+        return this.save(usuario);
+    }
+
+    public Usuario findUserById(Long id) {
+        Optional<Usuario> usuario = userRepository.findById(id);
+        return usuario.isPresent()?usuario.get():null;
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+
+    private Usuario save(Usuario usuario){
+
+        return userRepository.save(usuario);
+    }
+    public Usuario login(String email, String password){
+        Usuario user = userRepository.findByEmail(email);
+        if (user!=null && user.getPassword().equals(password)){
+            return user;
+        }else{
+            throw new LoginException();
+        }
+    }
+
     public void testTransaction(){
 
         List<Role> roleUser = roleRepository.findByName("User");
-
-
 
         userRepository.save(new Usuario("usuario1", "msansone@gmail.com", "123",roleUser));
         userRepository.save(new Usuario("usuario2", "msansone@gmail.com", "123",roleUser));
@@ -44,20 +80,6 @@ public class SecurityService {
         userRepository.save(new Usuario("", "msansone@gmail.com", "123",roleUser));
         userRepository.save(new Usuario("usuario7", "msansone@gmail.com", "123",roleUser));
 
-    }
-
-    public List<Usuario> findAllUsuarios() {
-        return userRepository.findAll();
-    }
-
-    public Usuario login(String email, String password){
-        Usuario user = userRepository.findByEmail(email);
-
-        if (user!=null && user.getPassword().equals(password)){
-            return user;
-        }else{
-            throw new LoginException();
-        }
     }
 
 }
