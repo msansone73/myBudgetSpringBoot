@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/mybudget/")
 public class ExpenseController {
@@ -27,12 +28,23 @@ public class ExpenseController {
 
         return expenseService.AdicionarDespesa(expense);
     }
+    
+    @PutMapping( path = "/expense", consumes = "application/json" , produces = "application/json")
+    public Expense updateExpense(@RequestBody Expense expense){
+
+        return expenseService.Salvar(expense);
+    }
 
     @GetMapping("/expense/{id}")
     public Optional<Expense> buscarPorId(@PathVariable Long id){
         return expenseService.listar(id);
     }
-
+    
+    @GetMapping("/expense/usuario/{idUsuario}")
+    public Optional<List<Expense>> getByUsuario(@PathVariable Long idUsuario){
+        return expenseService.getByIdUsuario(idUsuario);
+    }
+    
     @GetMapping("/expense/")
     public List<Expense> buscarTudo(){
         return expenseService.listarTudo();

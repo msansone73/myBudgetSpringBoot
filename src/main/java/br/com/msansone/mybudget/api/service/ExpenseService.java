@@ -1,9 +1,9 @@
 package br.com.msansone.mybudget.api.service;
 
-import java.math.BigDecimal;
-import java.util.Date;
+
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +28,16 @@ public class ExpenseService {
 
 	public List<Expense> listarTudo() {
 		return expenseRepository.findAll();
+	}
+
+	public Optional<List<Expense>> getByIdUsuario(Long idUsuario) {
+		return expenseRepository.findByIdUsuario(idUsuario);
+	}
+
+	public Expense Salvar(Expense expense) {
+		System.out.println(expense.getName());
+		System.out.println(expense.getValue());
+
+		return expenseRepository.save(expense);
 	}
 }

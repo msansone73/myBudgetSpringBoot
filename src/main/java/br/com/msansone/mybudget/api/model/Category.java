@@ -16,16 +16,14 @@ public class Category {
     private  String name;
     @Enumerated(EnumType.STRING)
     private CategoryType type;
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private SubCategory subCategory;
 
     public Category() {
     }
 
-    public Category(String name, CategoryType type, SubCategory subCategory) {
+    public Category(String name, CategoryType type) {
         this.name = name;
         this.type = type;
-        this.subCategory = subCategory;
+
     }
 
     public Long getId() {
@@ -52,11 +50,4 @@ public class Category {
         this.type = type;
     }
 
-    public SubCategory getSubCategory() {
-        return subCategory;
-    }
-
-    public void setSubCategory(SubCategory subCategory) {
-        this.subCategory = subCategory;
-    }
 }

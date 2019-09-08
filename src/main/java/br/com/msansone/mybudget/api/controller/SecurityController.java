@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/mybudget/security")
 public class SecurityController {
 
 
+	
     @Autowired
     SecurityService securityService;
 
@@ -21,7 +23,7 @@ public class SecurityController {
 
         return securityService.findAllUsuarios();
     }
-
+    
     @GetMapping("/user/{id}")
     public Usuario getUserById(@PathVariable Long id) {
         return securityService.findUserById(id);
@@ -49,7 +51,9 @@ public class SecurityController {
 
     @PostMapping("/user/login/")
     public Usuario login(@RequestBody Usuario usuario){
-        return securityService.login(usuario.getEmail(),usuario.getPassword());
+    	System.out.println("usuario.getEmail()="+usuario.getEmail());
+       	System.out.println("usuario.getPassword()="+usuario.getPassword());
+               return securityService.login(usuario.getEmail(),usuario.getPassword());
     }
 
 }

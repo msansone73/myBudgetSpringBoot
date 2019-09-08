@@ -35,9 +35,6 @@ public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
     RoleRepository roleRepository;
 
     @Autowired
-    SubCategoryRepository subCategoryRepository;
-
-    @Autowired
     CategoryRepository categoryRepository;
 
     @Autowired
@@ -57,13 +54,9 @@ public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
     private void createExpenseData() {
 
 
-        SubCategory padaria = subCategoryRepository.save(new SubCategory("Padaria"));
-        SubCategory jumbo = subCategoryRepository.save(new SubCategory("Jumbo Eletro"));
-        SubCategory farmacia = subCategoryRepository.save(new SubCategory("Farmácia"));
-
-        categoryRepository.save(new Category("Mercado",CategoryType.Expense,jumbo));
-        categoryRepository.save(new Category("Mercado",CategoryType.Expense,padaria));
-        categoryRepository.save(new Category("Saúde",CategoryType.Expense,farmacia));
+        categoryRepository.save(new Category("Mercado",CategoryType.Expense));
+        categoryRepository.save(new Category("Mercado",CategoryType.Expense));
+        categoryRepository.save(new Category("Saúde",CategoryType.Expense));
 
         //Expense expense = new Expense("tasnque cheio",new Date(),new BigDecimal(20.2),userRepository.findById(3l).get(),categoryRepository.findById(7l).get());
         //expenseRepository.save(expense);

@@ -6,6 +6,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Expense.findByIdUsuario", query = "select e from Expense e where e.usuario.id=:idUsuario")
+})
 public class Expense {
 
 	@Id
@@ -19,9 +22,9 @@ public class Expense {
 	private String name;
 	private Date data;
 	private BigDecimal value;
-	@ManyToOne(cascade = CascadeType.MERGE, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.DETACH, fetch=FetchType.EAGER)
 	private Usuario usuario;
-	@ManyToOne(cascade = CascadeType.MERGE, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.DETACH, fetch=FetchType.EAGER)
 	private Category category;
 
 	public Expense() {

@@ -61,7 +61,8 @@ public class SecurityService {
         if (user!=null && user.getPassword().equals(password)){
             return user;
         }else{
-            throw new LoginException();
+        	return null;
+            //throw new LoginException();
         }
     }
 
